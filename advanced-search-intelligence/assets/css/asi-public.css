@@ -1,0 +1,152 @@
+/* Estilos para o formulário de busca e autocomplete no frontend */
+
+/* Wrapper para o título e formulário */
+.asi-search-wrapper {
+    margin-bottom: 20px; /* Espaçamento abaixo do componente */
+}
+
+/* Título Customizável */
+.asi-custom-title {
+    margin-bottom: 10px;
+    font-weight: bold; /* Manter a negrito como padrão */
+}
+
+/* Formulário de busca */
+#asi-search-form {
+    display: flex; /* Usar flexbox para alinhamento */
+    align-items: flex-start; /* Alinha o topo dos itens, útil com altura diferente */
+    gap: 10px; /* Espaçamento entre os elementos */
+    position: relative; /* Necessário para posicionar o autocomplete */
+}
+
+/* Campo de busca (input) */
+#asi-busca {
+    padding: 10px 15px; /* Aumentado o padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 900px; /* Definido explicitamente para 900px */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    vertical-align: middle;
+    font-size: 16px; /* Ajuste para melhor visualização */
+    color: #163E64; /* Cor do texto digitado */
+    height: 45px; /* Define uma altura fixa para alinhar com o botão */
+}
+
+/* Campo de categoria (select) */
+#asi-categoria {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 240px; /* Mantém o tamanho já ajustado */
+    box-sizing: border-box;
+    vertical-align: middle;
+    font-size: 16px; /* Ajuste para melhor visualização */
+    color: #163E64; /* Cor do texto das categorias */
+    height: 45px; /* Define uma altura fixa para alinhar com o botão */
+}
+
+/* Botão de busca */
+#asi-search-button {
+    width: 45px; /* Largura para circular */
+    height: 45px; /* Altura para circular */
+    border-radius: 50%; /* Torna o botão circular */
+    background-color: #A4A7A9; /* Nova cor de fundo */
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex; /* Para centralizar o SVG */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Impede que o botão encolha */
+    padding: 0; /* Remove padding padrão do botão */
+    transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+#asi-search-button:hover {
+    background-color: #DE5532; /* Nova cor de hover */
+}
+
+/* Ícone de lupa SVG */
+.asi-search-icon {
+    width: 20px; /* Tamanho do ícone */
+    height: 20px;
+    stroke: white; /* Cor do contorno da lupa */
+    stroke-width: 2; /* Espessura do contorno */
+    fill: none; /* Garante que o interior não seja preenchido */
+}
+
+/* Mensagem de busca vazia */
+.asi-search-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+    display: none; /* Esconde por padrão, JS mostra quando necessário */
+}
+
+/* Contêiner do Autocomplete */
+#asi-autocomplete-container {
+    position: absolute;
+    top: calc(100% + 5px); /* Posiciona abaixo do campo de busca, com um pequeno espaço */
+    left: 0;
+    width: 900px; /* Largura definida explicitamente para o container, igual ao campo de busca */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-sizing: border-box; /* Inclui padding/border na largura */
+}
+
+/* Resultados do Autocomplete */
+#asi-autocomplete-results {
+    border: 1px solid #A4A7A9; /* Borda fina */
+    max-height: 250px; /* Altura máxima para rolagem */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: none; /* Esconde por padrão */
+    box-sizing: border-box;
+    width: 100%; /* Ocupa 100% da largura do #asi-autocomplete-container (que é 900px) */
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Destaque da palavra procurada */
+.asi-highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* Títulos de grupos de sugestões */
+.asi-suggestion-group-title {
+    font-weight: bold;
+    padding: 8px 10px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+.asi-suggestion-group-title:first-child {
+    margin-top: 0;
+}
+
+/* Mensagem de "Nada Encontrado" */
+.asi-no-results-message {
+    color: #DE5532; /* Cor destacada para a mensagem */
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #DE5532;
+    background-color: #ffe0db; /* Fundo suave */
+    border-radius: 4px;
+    display: none; /* Esconde por padrão, JS mostra quando necessário */
+}
