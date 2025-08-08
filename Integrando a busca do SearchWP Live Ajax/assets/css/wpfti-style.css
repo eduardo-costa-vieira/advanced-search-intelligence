@@ -1,0 +1,14 @@
+.wpfti-results ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.wpfti-results li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+.wpfti-results .peso {
+    float: right;
+    font-weight: bold;
+    color: #0073aa;
+}
